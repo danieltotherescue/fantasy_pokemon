@@ -1,0 +1,1 @@
+json.partial! "userpokes/userpoke", userpoke: @userpoke
