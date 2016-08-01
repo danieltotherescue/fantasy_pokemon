@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Pokemon -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Pokemon %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @pokemon.name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @pokemon.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:moveset) %></dt>
+      <dd><pre class="prettyprint"><%= @pokemon.moveset %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:type) %></dt>
+      <dd><pre class="prettyprint"><%= @pokemon.type %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:height) %></dt>
+      <dd><pre class="prettyprint"><%= @pokemon.height %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:weight) %></dt>
+      <dd><pre class="prettyprint"><%= @pokemon.weight %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Moveset:</strong>
-  <%= @pokemon.moveset %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              pokemons_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_pokemon_path(@pokemon), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              pokemon_path(@pokemon),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Type:</strong>
-  <%= @pokemon.type %>
-</p>
-
-<p>
-  <strong>Height:</strong>
-  <%= @pokemon.height %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @pokemon.weight %>
-</p>
-
-<%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
-<%= link_to 'Back', pokemons_path %>
