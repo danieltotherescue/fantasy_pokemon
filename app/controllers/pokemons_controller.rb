@@ -1,5 +1,5 @@
 class PokemonsController < ApplicationController
-  before_action :set_pokemon, only: [:show, :edit, :update, :destroy]
+  before_action :set_pokemon, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /pokemons
   # GET /pokemons.json
