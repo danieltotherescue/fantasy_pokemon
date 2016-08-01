@@ -1,6 +1,5 @@
-<h1>Editing userpoke</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @userpoke %> |
-<%= link_to 'Back', userpokes_path %>
+<%- model_class = Userpoke -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Userpoke %></h1>
+</div>
+<%= render :partial => 'form' %>
