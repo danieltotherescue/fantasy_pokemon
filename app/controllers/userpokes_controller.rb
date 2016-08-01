@@ -1,5 +1,5 @@
 class UserpokesController < ApplicationController
-  before_action :set_userpoke, only: [:show, :edit, :update, :destroy]
+  before_action :set_userpoke, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /userpokes
   # GET /userpokes.json
